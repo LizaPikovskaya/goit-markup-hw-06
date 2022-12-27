@@ -636,10 +636,16 @@ margin-right: 24px;
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 border-radius: 4px;
 
-
 background-color: transparent;
 color: #FFFFFF;
 
+transition: border-color var(--transition-dur-and-func);
+
+}
+.subscription-input:focus-within {
+  border-color: var(--accent-color);
+  outline: none;
+ 
 }
 
 .subscription-input::placeholder {
@@ -651,8 +657,6 @@ color: #FFFFFF;
   padding: 8px 24px;
   align-self: end;
 
-  /* font-family: 'Roboto';
-font-style: normal; */
 font-weight: 700;
 font-size: 16px;
 line-height: 1.5;
@@ -671,16 +675,11 @@ color: #FFFFFF;
   background: var(--accent-color);
   border-radius: 4px;
 }
-
-.subscription-button::after {
-  content: '';
-  width: 24px;
-height: 24px;
-background-image: url(./svg/frame.svg);
-background-repeat: no-repeat;
-background-size: contain;
-margin-left: 16px;
+.subscription-button-icon {
+  margin-left: 16px;
 }
+
+
 /* /FOOTER */
 
 /* =====MODAL===== */
@@ -799,22 +798,46 @@ margin-left: 16px;
 
 .feedback-input {
   padding: 8px 16px 8px 38px;
-}
-.feedback-input::after {
-  content: '';
-  widows: 12px;
-  height: 12px;
-  background-color: black;
-}
+  width: 100%;
 
+border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+
+transition: border-color var(--transition-dur-and-func);
+}
+.feedback-input:focus-within + .feedback-form-icon {
+fill: var(--accent-color)
+}
+.feedback-input:focus-within,
+.feedback-textarea:focus-within  {
+  outline: none;
+  border-color: var(--accent-color);
+}
+.feedback-input-wrapper {
+  position: relative;
+  display: block; 
+   color: #000000;
+
+}
 .feedback-form-icon {
-  fill: inherit;
+position: absolute;
+top: 50%;
+left: 16px;
+transform: translateY(-50%);
+fill: currentColor;
+
+transition: fill var(--transition-dur-and-func);
 
 }
 .feedback-textarea {
   height: 120px;
   resize: none;
   padding: 8px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+border-radius: 4px;
+
+transition: border-color var(--transition-dur-and-func);
 }
 .feedback-textarea::placeholder {
 
@@ -831,13 +854,22 @@ color: rgba(117, 117, 117, 0.5);
 }
 .feedback-input-checkbox {
   margin-left: 8px;
+
+  
 }
 .feedback-label-checkbox {
+  display: inline-block;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
 
   color: #757575;
+}
+.privacy-policy-field::before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  background-color: black;
 }
 
 .feedback-submit {
