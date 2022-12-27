@@ -375,7 +375,7 @@ margin-right: 40px;
   justify-content: center;
   align-items: center;
 
-  transition: backgroundcolor var(--transition-dur-and-func);
+  transition: background-color var(--transition-dur-and-func);
   /* padding: 12px; */
 }
 
@@ -593,6 +593,7 @@ margin-right: 40px;
   margin-bottom: 16px;
   color: #ffffff;
   font-weight: 600;
+  line-height: 1.5;
 }
 
 .social-link.dark-theme {
@@ -603,16 +604,18 @@ margin-right: 40px;
 .social-link.dark-theme:focus {
   background-color: #31d0aa;
 }
-
-form {
-  display: flex;
+.footer-form {
   margin-left: auto;
 }
-.subscription-field {
+
+.subscription-form {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: 24px;
+  
+
+}
+.subscription-text {
+  margin-bottom: 16px;
+padding: 0;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
@@ -624,28 +627,59 @@ form {
 .subscription-input {
   padding: 8px 16px;
   min-width: 232px;
-
+margin-right: 24px;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
 
-  /* display: flex;
-align-items: center; */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+border-radius: 4px;
 
+
+background-color: transparent;
+color: #FFFFFF;
+
+}
+
+.subscription-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
 .subscription-button {
-  display: block;
-  padding: 4px 24px;
-height: 40px;
+  display: flex;
+  padding: 8px 24px;
+  align-self: end;
+
+  /* font-family: 'Roboto';
+font-style: normal; */
+font-weight: 700;
+font-size: 16px;
+line-height: 1.5;
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.06em;
+
+color: #FFFFFF;
 
   letter-spacing: 0.06em;
 
-  color: #ffffff;
 
+  color: #ffffff;
   background: var(--accent-color);
   border-radius: 4px;
+}
+
+.subscription-button::after {
+  content: '';
+  width: 24px;
+height: 24px;
+background-image: url(./svg/frame.svg);
+background-repeat: no-repeat;
+background-size: contain;
+margin-left: 16px;
 }
 /* /FOOTER */
 
@@ -735,85 +769,98 @@ height: 40px;
   display: flex;
   flex-direction: column;
 }
-.feedback-form-text {
-margin-bottom: 16px;
-font-weight: 600;
-font-size: 16px;
-line-height: 1.5;
+.modal-form-text {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
 
-text-align: center;
-letter-spacing: 0.02em;
+  text-align: center;
+  letter-spacing: 0.02em;
 
-color: var(--secondary-text-color);
-
+  color: var(--secondary-text-color);
 }
 
 .feedback-field {
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;
-
 }
 .feedback-label {
   margin-bottom: 4px;
 
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
 
-font-weight: 400;
+  color: #8e8f99;
+}
+
+.feedback-input {
+  padding: 8px 16px 8px 38px;
+}
+.feedback-input::after {
+  content: '';
+  widows: 12px;
+  height: 12px;
+  background-color: black;
+}
+
+.feedback-form-icon {
+  fill: inherit;
+
+}
+.feedback-textarea {
+  height: 120px;
+  resize: none;
+  padding: 8px 16px;
+}
+.feedback-textarea::placeholder {
+
 font-size: 12px;
 line-height: 1.16;
 letter-spacing: 0.01em;
 
-color: #8E8F99;
-}
+color: rgba(117, 117, 117, 0.5);
 
-.feedback-input {
-  padding: 8px 16px;
-}
-
-.feedback-textarea {
-  min-height: 120px;
-  resize: none;
 }
 
 .privacy-policy-field {
   margin-bottom: 24px;
-
-
 }
 .feedback-input-checkbox {
   margin-left: 8px;
 }
 .feedback-label-checkbox {
   font-size: 12px;
-line-height: 1.33;
-letter-spacing: 0.04em;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
 
-color: #757575;
-
+  color: #757575;
 }
 
-.feedback-button {
+.feedback-submit {
+  min-width: 170px;
+  padding: 16px 32px;
+  margin-left: auto;
+  margin-right: auto;
 
-min-width: 170px;
-padding: 16px 32px;
-margin-left: auto;
-margin-right: auto;
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
 
-font-family: 'Roboto';
-font-weight: 600;
-font-size: 16px;
-line-height: 19px;
-/* identical to box height */
-
-/* display: flex;
+  /* display: flex;
 align-items: center;
 text-align: center; */
-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 
-color: #FFFFFF;
-background: #4D5AE5;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-border-radius: 4px;
+  color: #ffffff;
+  background: #4d5ae5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
 /* /=====MODAL===== */
