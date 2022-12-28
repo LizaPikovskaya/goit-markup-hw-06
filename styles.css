@@ -869,6 +869,9 @@ margin-right: 40px;
 
   color: #757575;
 }
+.feedback-label-checkbox > a {
+  color: var(--accent-color)
+}
 .checkbox-icon {
 margin-right: 8px;
   background-color: var(--additional-bcg-color);
@@ -878,6 +881,9 @@ margin-right: 8px;
   border-radius: 2px;
 
   transition: background-color var(--transition-dur-and-func), border var(--transition-dur-and-func), fill var(--transition-dur-and-func);
+}
+.checkbox-icon {
+  cursor: pointer;
 }
 .feedback-input-checkbox:checked:focus-within + .checkbox-icon {
   background-color: var(--accent-color);
